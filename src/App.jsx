@@ -11,10 +11,10 @@ const App = () => {
     hero: "/images/portada.jpg",       
     filosofia: "/images/filosofia.jpg", 
     marinaCover: "/images/marina.jpg",  
-    productDefault: "/images/default.png" // Cambiado a .png por seguridad
+    productDefault: "/images/default.png" 
   };
 
-  // --- NUEVA BASE DE DATOS DESDE EXCEL ---
+  // --- BASE DE DATOS DESDE EXCEL ---
   const coffeeData = [
     // MARINA RIVASPLATA
     { id: 1, name: "Obata", category: "marina", profile: "Cacao suave, azúcar rubia, chocolate con leche.", score: 82, price: 14, altitude: "2200", process: "Semi Lavado", acidity: "Media", body: "Medio", detail: "Un varietal robusto y confiable. Notas dulces muy limpias.", imageName: "obata" },
@@ -259,6 +259,7 @@ const App = () => {
               <ul className="space-y-4 text-sm text-stone-600 font-light">
                 <li>Buenos Aires, Argentina</li>
                 <li className="font-medium text-black">ventas@andinosur.coffee</li>
+                <li className="font-medium text-black">WA: +54 9 2926 50-9860</li>
               </ul>
             </div>
           </div>
@@ -323,7 +324,7 @@ const App = () => {
                   <p className="text-stone-600 italic leading-relaxed text-lg">"{selectedProduct.profile}"</p>
                 </div>
                 
-                {/* Nueva Cuadrícula de 4 items (Altura y Proceso agregados) */}
+                {/* Cuadrícula de 4 items (Altura y Proceso agregados) */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div>
                     <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-stone-400 mb-1">
@@ -357,10 +358,16 @@ const App = () => {
                 </div>
               </div>
 
+              {/* --- BOTÓN DE WHATSAPP --- */}
               <div className="flex gap-4">
-                <button className="flex-1 bg-black text-white text-[10px] uppercase tracking-[0.3em] py-4 rounded-full hover:bg-[#333] transition-all shadow-xl font-bold">
+                <a 
+                  href={`https://wa.me/5492926509860?text=${encodeURIComponent(`Hola, me interesa obtener más información sobre el lote: ${selectedProduct.name}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-black text-white text-[10px] uppercase tracking-[0.3em] py-4 rounded-full hover:bg-[#333] transition-all shadow-xl font-bold text-center block w-full"
+                >
                   Contactar por este lote
-                </button>
+                </a>
               </div>
             </div>
           </div>
